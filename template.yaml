@@ -17,6 +17,9 @@ Resources:
       CodeUri: hello-world/
       Handler: hello-world
       Runtime: go1.x
+      AutoPublishAlias: live
+      DeploymentPreference:
+        Type: Canary10Percent5Minutes
       Architectures:
         - x86_64
       Events:

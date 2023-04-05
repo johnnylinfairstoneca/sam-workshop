@@ -26,7 +26,7 @@ type OutputMessage struct {
 func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 
 	output := OutputMessage{
-		Message: "hello my friend",
+		Message: "I'm using canary deployments",
 	}
 
 	outputStr, _ := json.Marshal(output)

@@ -44,8 +44,8 @@ func TestHandler(t *testing.T) {
 			t.Fatal("response['message'] should be string but is", reflect.TypeOf(message).Kind())
 		}
 
-		if message.(string) != "hello my friend" {
-			t.Fatal("response['message'] is not 'hello my friend'")
+		if message.(string) != "I'm using canary deployments" {
+			t.Fatal("response['message'] is not 'I'm using canary deployments'")
 		}
 
 	})

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"errors"
 
 	"github.com/aws/aws-lambda-go/events"
@@ -23,17 +24,16 @@ type OutputMessage struct {
 }
 
 func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
-	panic("This will cause a deployment rollback")
-	// output := OutputMessage{
-	// 	Message: "I'm using canary deployments",
-	// }
+	output := OutputMessage{
+		Message: "I'm using canary deployments",
+	}
 
-	// outputStr, _ := json.Marshal(output)
+	outputStr, _ := json.Marshal(output)
 
-	// return events.APIGatewayProxyResponse{
-	// 	Body:       string(outputStr),
-	// 	StatusCode: 200,
-	// }, nil
+	return events.APIGatewayProxyResponse{
+		Body:       string(outputStr),
+		StatusCode: 200,
+	}, nil
 }
 
 func main() {
